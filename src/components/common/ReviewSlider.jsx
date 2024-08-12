@@ -8,7 +8,7 @@ import {Autoplay,FreeMode,Navigation,Pagination} from 'swiper/modules';
 import ReactStars from "react-rating-stars-component"
 
 
- import {ratingsEndpoints} from "../../services/apis";
+import {ratingsEndpoints} from "../../services/apis";
 import { apiConnector } from '../../services/apiconnector';
 import { FaStar } from 'react-icons/fa6';
 
@@ -16,7 +16,8 @@ const ReviewSlider = () => {
 
     const [reviews,setReviews] = useState([]);
     const truncateWords = 15;
-
+    const firstName = ["Shri Krishna","Shri Rahul","Sir Krishna","Ram","Rohit","Sachin","Krishna"];
+    const lastName = ["Kumar"];
     //fetch the reviews
     useEffect(()=>{
         const fetchAllReviews = async()=>{
@@ -59,7 +60,7 @@ const ReviewSlider = () => {
                 />
 
                 <p className="lg:w-[50px] text-richblack-25 font-bold">{review?.course?.courseName}</p>
-                <p className="flex">{review?.user?.firstName} {review?.user?.lastName}</p>
+                <p className="flex">{firstName[index]} {review?.user?.lastName}</p>
                 <p>
                     {review?.review}
                 </p>
